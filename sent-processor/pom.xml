@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>sent-processor</groupId>
+	<artifactId>sent-processor</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<parent>
+		<groupId>org.springframework.xd</groupId>
+		<artifactId>spring-xd-module-parent</artifactId>
+		<version>1.1.0.RELEASE</version>
+	</parent>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.xd</groupId>
+			<artifactId>spring-xd-dirt</artifactId>
+			<version>${spring.xd.version}</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring-xd-hadoop</artifactId>
+					<groupId>org.springframework.xd</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.xd</groupId>
+			<artifactId>spring-xd-test</artifactId>
+			<version>${spring.xd.version}</version>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring-xd-hadoop</artifactId>
+					<groupId>org.springframework.xd</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- required for SingleNodeApplication to output Hadoop version -->
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-common</artifactId>
+			<version>2.3.0</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
